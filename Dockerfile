@@ -61,6 +61,10 @@ RUN apt update && apt install -y \
     v4l-utils \
     usbutils 
 
+RUN apt update && apt install -y \
+    tftp-hpa \
+    vim
+
 WORKDIR /Repos/gtcclient
 
 COPY ./utils .
