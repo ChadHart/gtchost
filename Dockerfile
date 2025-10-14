@@ -57,6 +57,15 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y \
+    iputils-ping \
+    v4l-utils \
+    usbutils 
+
+WORKDIR /Repos/gtcclient
+
+COPY ./utils .
+
 # RUN pip3 install --no-cache-dir opencv-python-headless
 
 # Set up environment variables
