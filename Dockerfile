@@ -73,6 +73,10 @@ WORKDIR /Repos/gtcclient
 
 COPY ./utils .
 
+WORKDIR /Repos/GTClash
+
+COPY ../GTClash .
+
 
 
 
