@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt update && apt install -y \
     iputils-ping 
 
-WORKDIR /Repos/gtchost
+WORKDIR /Repos/gtcclient
 
 COPY . . 
 # COPY ../GTClash .
