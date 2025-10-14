@@ -22,5 +22,5 @@ RUN apt update && apt install -y \
 
 WORKDIR /Repos/gtcclient
 
-COPY . . 
+COPY ./utils .
 # COPY ../GTClash .
