@@ -23,7 +23,9 @@ RUN apt-get install -y \
     libgstreamer-plugins-base1.0-dev \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
-    gstreamer1.0-plugins-ugly
+    gstreamer1.0-plugins-ugly \
+    v4l-utils \
+    libv4l-dev
 
 WORKDIR /Repos
 
@@ -37,6 +39,9 @@ RUN cmake .. -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_OPENCL=ON \
     -D WITH_FFMPEG=ON \
     -D WITH_GSTREAMER=ON \
+    -D WITH_V4L=ON \
+    -D WITH_LIBV4L=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
     -D PYTHON3_EXECUTABLE=$(which python3) \
     -D PYTHON3_LIBRARY=$(python3 -c "import sys; print(sys.prefix)")/lib/libpython3.so \
     -D PYTHON3_INCLUDE_DIR=$(python3 -c "import sys; print(sys.prefix)")/include/python3.12 
@@ -59,15 +64,17 @@ RUN apt-get update && apt-get install -y \
 RUN apt update && apt install -y \
     iputils-ping \
     v4l-utils \
-    usbutils 
-
-RUN apt update && apt install -y \
+    libv4l-dev \
+    usbutils \
     tftp-hpa \
     vim
 
 WORKDIR /Repos/gtcclient
 
 COPY ./utils .
+
+
+
 
 # RUN pip3 install --no-cache-dir opencv-python-headless
 
