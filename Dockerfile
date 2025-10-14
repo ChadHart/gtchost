@@ -54,10 +54,9 @@ RUN apt-get update && apt-get install -y \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-ugly \
     gstreamer1.0-libav \
-    python3-numpy \
-    && rm -rf /var/lib/apt/lists/*
+    python3-numpy 
 
-RUN apt-get install -y \
+RUN apt update && apt install -y \
     iputils-ping \
     v4l-utils \
     usbutils 
