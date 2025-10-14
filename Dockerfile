@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     python3-dev \
     python3-numpy \
-    python3-opencv \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-ugly \
@@ -15,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     v4l-utils \
     usbutils \ 
-    tftp-hpa 
+    tftp-hpa \
+    python3-opencv 
 
 RUN apt update && apt install -y \
     iputils-ping 
